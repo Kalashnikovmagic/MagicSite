@@ -19,5 +19,59 @@ body { background:#111; color:#fff; overflow-x:hidden; }
 .feature h3 { margin-bottom:10px; font-size:1.3rem; color:#f39c12; }
 .feature p { font-size:1rem; line-height:1.5; }
 
+/* --- Блок мероприятий --- */
+.events { padding:80px 20px; background:#111; text-align:center; }
+.events h2 { font-size:2.2rem; margin-bottom:40px; color:#f39c12; }
+
+.cards-container {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+}
+
+.card {
+  width:150px;
+  height:220px;
+  perspective:1000px;
+  cursor:pointer;
+}
+
+.card-inner {
+  width:100%;
+  height:100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:12px;
+  backface-visibility:hidden;
+}
+
+/* Рубашка Bicycle на фронте */
+.card-front {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5a/Bicycle_card_back.png');
+  background-size: cover;
+}
+
+/* Лицевая сторона с мастями и названием */
+.card-back {
+  background:#fff;
+  color:#111;
+  transform: rotateY(180deg);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  font-weight:bold;
+}
+
+.card-back p { margin-bottom:10px; font-size:1rem; text-align:center; }
+.card-back .suits span { margin:0 5px; font-size:1.2rem; }
+
 /* --- Футер --- */
 footer { text-align:center; padding:40px 20px; font-size:0.9rem; color:#888; }
