@@ -64,7 +64,9 @@ dialog[open]{animation:pop .45s var(--ease)}@keyframes pop{from{opacity:0;transf
 .fc{display:flex;flex-direction:column;gap:14px}.fc h3{font-size:clamp(1.5rem,2.6vw,2.2rem);margin-top:8px}.fc p{margin:0;color:var(--mute);flex:1}
 .vid{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#111}
 .vid video,.vid>img{width:100%;height:100%;object-fit:cover}
-.play{position:absolute;inset:0;border:0;background:linear-gradient(0deg,rgba(0,0,0,.5),transparent 50%);cursor:pointer;display:grid;place-items:end start;padding:20px}
+.vid video{position:absolute;inset:0;z-index:2;background:#111}
+.vid video[hidden]{display:none}
+.play{position:absolute;z-index:3;inset:0;border:0;background:linear-gradient(0deg,rgba(0,0,0,.5),transparent 50%);cursor:pointer;display:grid;place-items:end start;padding:20px}
 .play i{width:64px;height:64px;border-radius:50%;background:var(--lime);display:grid;place-items:center;transition:transform .35s var(--ease)}.play:hover i{transform:scale(1.12)}
 .play i::before{content:"";border-left:18px solid var(--ink);border-block:11px solid transparent;margin-left:5px}
 .fc .btn{align-self:flex-start;padding:14px 24px;font-size:15px}
@@ -204,7 +206,7 @@ document.querySelectorAll('.ev').forEach(b=>b.onclick=()=>{const e=EV[b.dataset.
 $('#dx').onclick=()=>dlg.close();dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
 $('#dc').onclick=()=>{choose(dlg.dataset.t);dlg.close()};
 document.querySelectorAll('[data-ev]').forEach(a=>a.onclick=()=>choose(a.dataset.ev));
-document.querySelectorAll('.play').forEach(p=>p.onclick=()=>{const w=p.parentElement,v=w.querySelector('video');w.querySelector('img').hidden=true;v.hidden=false;v.controls=true;p.remove();v.play()});
+document.querySelectorAll('.play').forEach(p=>p.onclick=async()=>{const w=p.parentElement,v=w.querySelector('video'),img=w.querySelector('img');img.hidden=true;v.hidden=false;v.controls=true;try{await v.play()}catch(err){v.controls=true}});
 
 const hi=$('#himg');if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&matchMedia('(pointer:fine)').matches)addEventListener('pointermove',e=>{hi.style.transform=`translate(${(e.clientX/innerWidth-.5)*-18}px,${(e.clientY/innerHeight-.5)*-12}px)`});
 </script>
