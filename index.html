@@ -69,8 +69,8 @@ dialog[open]{animation:pop .45s var(--ease)}@keyframes pop{from{opacity:0;transf
 .play i::before{content:"";border-left:18px solid var(--ink);border-block:11px solid transparent;margin-left:5px}
 .fc .btn{align-self:flex-start;padding:14px 24px;font-size:15px}
 /* contact */
-.book{background:#050505;color:var(--bone);border-radius:var(--r) var(--r) 0 0}
-.contact-wrap{position:relative;max-width:1280px;min-height:100vh;margin:0 auto;padding:4vh 0 3vh;display:grid;grid-template-columns:minmax(320px,.9fr) minmax(420px,1.1fr);gap:clamp(30px,5vw,70px);align-items:center}
+.book{background:#050505;color:var(--bone);border-radius:var(--r) var(--r) 0 0;padding-top:0;padding-bottom:0}
+.contact-wrap{position:relative;max-width:1280px;min-height:0;margin:0 auto;padding:32px 0 28px;display:grid;grid-template-columns:minmax(320px,.9fr) minmax(420px,1.1fr);gap:clamp(30px,5vw,70px);align-items:center}
 .contact-copy{max-width:600px}
 .contact-eyebrow{margin:0 0 22px;color:var(--lime);font:700 10px/1 var(--b);letter-spacing:.18em}
 .contact-copy h2{margin:0;color:#fff;font:900 clamp(24px,2.6vw,40px)/.88 var(--d);letter-spacing:-.06em;text-transform:uppercase}
@@ -86,7 +86,7 @@ dialog[open]{animation:pop .45s var(--ease)}@keyframes pop{from{opacity:0;transf
 .contact-action small{font:600 8px/1 var(--b);letter-spacing:.12em;color:var(--lime);white-space:nowrap}
 .contact-action--whatsapp strong,.contact-action--vk strong,.contact-action--telegram strong{font-size:15px}
 @media(max-width:820px){
-.contact-wrap{width:88%;min-height:100vh;padding:10vh 0 8vh;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:42px}
+.contact-wrap{width:88%;min-height:0;padding:36px 0 28px;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:42px}
 .contact-copy h2{font-size:clamp(22px,6.3vw,38px)}
 .contact-lead{margin-top:20px;font-size:11px;line-height:1.5}
 .contact-actions{max-width:none;gap:10px}
