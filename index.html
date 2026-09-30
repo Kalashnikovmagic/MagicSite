@@ -44,11 +44,6 @@ h1 span:nth-child(2)>em{animation-delay:.12s;color:var(--lime)}
 .f strong{font:800 clamp(1.9rem,4.6vw,4.2rem)/.95 var(--d);overflow-wrap:anywhere}.f span{color:var(--mute);margin-top:18px}
 .f:nth-child(1){grid-column:span 3;background:var(--bone);color:var(--ink)}.f:nth-child(1) span{color:#55554f}
 .f:nth-child(2),.f:nth-child(3){grid-column:span 3}.f:nth-child(4){grid-column:span 3;background:var(--lime);color:var(--ink)}.f:nth-child(4) span{color:#3a4510}
-.f:nth-child(5){grid-column:span 6;flex-direction:row;align-items:center;gap:24px;cursor:pointer;text-align:left;font:inherit;color:inherit;min-height:0}
-.card{flex:none;width:min(300px,100%);aspect-ratio:1.586;border-radius:16px;padding:16px;background:linear-gradient(135deg,#2a2a2a,#0d0d0d);box-shadow:inset 0 0 0 1px #444;display:flex;flex-direction:column;justify-content:space-between;font:600 13px var(--b);letter-spacing:.04em;white-space:nowrap}
-.card::before{content:"";width:38px;height:28px;border-radius:6px;background:linear-gradient(135deg,#e9c97a,#a5843c)}
-.f:nth-child(5) span{margin:0;color:var(--bone);font-size:20px}.f:nth-child(5) span small{display:block;color:var(--mute);font-size:15px;margin-top:6px}
-#joke{display:none}.f.open #joke{display:block}.f.open #hint{display:none}
 /* events */
 .events{background:var(--bone);color:var(--ink);border-radius:var(--r) var(--r) 0 0}
 .events h2{max-width:11ch}.events .sub{color:#55554f;max-width:46ch;margin:22px 0 44px}
@@ -116,7 +111,6 @@ footer .wrap{display:grid;gap:12px}footer p{margin:0;max-width:80ch}
     <div class="f"><strong>500+</strong><span>выступлений</span></div>
     <div class="f"><strong>50 000+</strong><span>удивлённых людей</span></div>
     <div class="f"><strong>StandUp Magic</strong><span>Будет и удивительно, и смешно</span></div>
-    <button class="f" id="bank" type="button"><div class="card"><span>2323 3108 2019 1995</span><span>CARDHOLDER NAME</span></div><span><span id="hint">Тут ещё кое-что есть. Нажмите на карту.</span><span id="joke">Это не ваша банковская карта? Думаю, стоит проверить кошелёк 😉</span></span></button>
   </div>
 </div></section>
 
@@ -173,7 +167,7 @@ $('#dx').onclick=()=>dlg.close();dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
 $('#dc').onclick=()=>{choose(dlg.dataset.t);dlg.close()};
 document.querySelectorAll('[data-ev]').forEach(a=>a.onclick=()=>choose(a.dataset.ev));
 document.querySelectorAll('.play').forEach(p=>p.onclick=()=>{const w=p.parentElement,v=w.querySelector('video');w.querySelector('img').hidden=true;v.hidden=false;v.controls=true;p.remove();v.play()});
-$('#bank').onclick=e=>e.currentTarget.classList.toggle('open');
+
 const hi=$('#himg');if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&matchMedia('(pointer:fine)').matches)addEventListener('pointermove',e=>{hi.style.transform=`translate(${(e.clientX/innerWidth-.5)*-18}px,${(e.clientY/innerHeight-.5)*-12}px)`});
 </script>
 </body>
