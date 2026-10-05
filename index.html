@@ -105,7 +105,9 @@ section{padding-left:16px;padding-right:16px}
 .ev:nth-child(3) span{font-size:clamp(12px,3.2vw,18px)}
 .ev:nth-child(5) span{font-size:clamp(10px,2.8vw,15px)}
 .ev:nth-child(7) span{font-size:clamp(10px,2.7vw,15px)}
-.ev:nth-child(6) span{font-size:clamp(16px,4.2vw,22px)}
+/* В этой карточке уменьшаем только «Выпускной вечер». «Презентация» (7-я карточка) сохраняет стандартный размер. */
+.ev:nth-child(6) span{font-size:clamp(10px,2.7vw,15px)}
+.ev:nth-child(7) span{font-size:clamp(16px,4.2vw,22px)}
 .top{width:calc(100vw - 24px);max-width:calc(100vw - 24px)}
 .hero__in{width:100%;max-width:100%;padding-left:16px;padding-right:16px}
 .scene5__inner{width:100%;padding:8vh 6vw 12vh;display:flex;flex-direction:column;gap:11vh}.scene5__header{text-align:center;margin-bottom:3vh}.scene5__header h2{font-size:8.6vw}.scene5__description{text-align:center;margin:2.2vh 5vw 0;font-size:12px}.scene5__booking-cta{align-self:center;margin-top:16px}
